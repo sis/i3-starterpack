@@ -1,6 +1,5 @@
 # set modifier
-set $super Mod4
-set $alt Mod1
+set $super Mod1
 
 # set font
 font pango: Noto Sans 8
@@ -40,6 +39,7 @@ bindsym XF86AudioStop exec mpc stop
 
 # kill focused window
 bindsym $super+c kill
+bindsym $super+Shift+q kill
 bindsym $alt+F4 kill
 
 # change focus
@@ -81,6 +81,9 @@ bindsym $super+3 workspace 3
 bindsym $super+4 workspace 4
 bindsym $super+5 workspace 5
 bindsym $super+6 workspace 6
+
+# move workspace to different screen
+bindsym Mod1+x move workspace to output left
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace 1

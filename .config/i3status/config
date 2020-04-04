@@ -9,45 +9,40 @@ general {
 }
 
 order += "load"
-order += "cpu_temperature 0"
+# order += "cpu_temperature 0"
 order += "disk /"
-order += "disk /home"
-order += "ethernet enp1s0"
-order += "wireless wlp2s0"
+# order += "wireless _first_"
+order += "ethernet _first_"
 order += "volume master"
-order += "battery 1"
+# order += "battery 1"
 order += "tztime local"
 
 load {
-        format = "<span background='#f59335'>  %5min Load </span>"
+        format = "<span background='#50fa7b'>  </span><span background='#e5e9f0'> %5min Load </span>"
 }
 
 cpu_temperature 0 {
-        format = "<span background='#bf616a'>  %degrees °C </span>"
-        path = "/sys/class/thermal/thermal_zone0/temp"
+        format = "<span background='#ff5555'>  </span><span background='#e5e9f0'> %degrees °C </span>"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
 
 disk "/" {
-        format = "<span background='#fec7cd'>  %free Free </span>"
+        format = "<span background='#f1fa8c'>  </span><span background='#e5e9f0'> %free Free </span>"
 }
 
-disk "/home" {
-        format = "<span background='#a1d569'>  %free Free </span>"
+wireless _first_ {
+        format_up = "<span background='#bd93f9'>  </span><span background='#e5e9f0'> %essid </span>"
+        format_down = "<span background='#bd93f9'>  </span><span background='#e5e9f0'> Disconnected </span>"
 }
 
-ethernet enp1s0 {
-        format_up = "<span background='#88c0d0'>  %ip </span>"
-        format_down = "<span background='#88c0d0'>  Disconnected </span>"
-}
-
-wireless wlp2s0 {
-        format_up = "<span background='#b48ead'>  %essid </span>"
-        format_down = "<span background='#b48ead'>  Disconnected </span>"
+ethernet _first_ {
+        format_up = "<span background='#88c0d0'>  </span><span background='#e5e9f0'> %ip </span>"
+        format_down = "<span background='#88c0d0'>  </span><span background='#e5e9f0'> Disconnected </span>"
 }
 
 volume master {
-        format = "<span background='#ebcb8b'>  %volume </span>"
-        format_muted = "<span background='#ebcb8b'>  Muted </span>"
+        format = "<span background='#ff79c6'>  </span><span background='#e5e9f0'> %volume </span>"
+        format_muted = "<span background='#ff79c6'>  </span><span background='#e5e9f0'> Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -66,7 +61,7 @@ battery 1 {
 }
 
 tztime local {
-		format = "<span background='#81a1c1'> %time </span>"
-		format_time = " %a %-d %b %H:%M"
+        format = "<span background='#8be9fd'>  </span><span background='#e5e9f0'> %time </span>"
+        format_time = "%a %-d %b %H:%M"
 }
 
