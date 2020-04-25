@@ -1,3 +1,9 @@
+## Differences
+
+hsetroot -> nitrogen for wallpapers, set wallpaper manually
+wallpaper changed
+keybindings changed
+
 ## Introduction
 A simple guide (and example of configuration) to install i3 and its and essentials packages and make them look eye candy, 
 or at least make them not ugly :grin:
@@ -34,11 +40,11 @@ If i3-wm, dunst, i3lock, i3status, and suckless-tools are not installed automati
 `sudo apt-get install i3-wm dunst i3lock i3status suckless-tools` <br />
 
 - **Then install some additional packages to make your desktop enjoyable** <br />
-`sudo apt-get install compton hsetroot rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior`
+`sudo apt-get install compton nitrogen rxvt-unicode xsel rofi fonts-noto fonts-mplus xsettingsd lxappearance scrot viewnior`
 
 ## Explanations of Additional Packages
 - Compton is a compositor to provide some desktop effects like shadow, transparency, fade, and transiton. 
-- Hsetroot is a wallpaper handler. i3 has no wallpaper handler by default.
+- Nitrogen is a wallpaper handler. i3 has no wallpaper handler by default.
 - URxvt is a lightweight terminal emulator, part of *i3-sensible-terminal*.
 - Xsel is a program to access X clipboard. We need it to make copy-paste in URxvt available. Hit Alt+C to copy, and Alt+V to paste. 
 - Rofi is a program launcher, similar with dmenu but with more options.
@@ -216,7 +222,7 @@ Because it has a chance to intercept your music player global keybind hotkeys.
 Or maybe You can try `playerctl`. It's the common way to control media, and supported by a lot of popular media player. <br />
 ```
 #autostart
-exec --no-startup-id hsetroot -center ~/.wallpaper.png
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 ```
